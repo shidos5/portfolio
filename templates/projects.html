@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="projects">
+  <h1 class="section-title">Projects</h1>
+  <div class="grid">
+    {% for p in projects %}
+      <a class="project-card reveal" href="{{ p.link }}" target="_blank" rel="noopener">
+        <div class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description }}</p>
+      </a>
+    {% else %}
+      <p class="muted">No projects yet. Add some to <code>data/projects.json</code>.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

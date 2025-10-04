@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Crypto App",
+    "description": "Comprehensive cryptocurrency tracking app with real-time market data, detailed charts, news feed, portfolio management, and exchange exploration. Built with Flutter, Firebase, OneSignal, and Google Ads.",
+    "tags": ["Flutter", "Firebase", "API", "Charts"],
+    "link": "https://github.com/shidos5/crypto-app"
+  },
+  {
+    "title": "SkillSync Pro",
+    "description": "AI-powered productivity coach with Pomodoro timer, goal tracking, progress statistics, AI chat assistant, and offline support using Hive. Features Firebase Auth and smart notifications.",
+    "tags": ["Flutter", "AI", "Firebase", "Hive"],
+    "link": "https://github.com/shidos5/skillsync-pro"
+  },
+  {
+    "title": "MindMate",
+    "description": "Smart mental health companion with AI-powered chat assistant (Gemini 2.0 Flash), conversation history, live typing effects, and Firebase authentication. Modern UI with interactive features.",
+    "tags": ["Flutter", "Gemini AI", "Firebase"],
+    "link": "https://github.com/shidos5/mindmate"
+  },
+  {
+    "title": "HireMe",
+    "description": "AI-powered career assistant for discovering remote jobs, creating professional CVs with elegant templates, and receiving career advice. Features job search, CV builder with PDF export, and WhatsApp/email sharing.",
+    "tags": ["Flutter", "AI", "PDF", "Hive"],
+    "link": "https://github.com/shidos5/hire-me"
+  }
+]

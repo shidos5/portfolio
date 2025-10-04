@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="contact">
+  <h1 class="section-title">✉️ Contact Me</h1>
+  <form class="form card glass" method="post" action="{{ url_for('contact') }}">
+    <label>
+      <span>👤 Name</span>
+      <input type="text" name="name" placeholder="Your name" required />
+    </label>
+    <label>
+      <span>📧 Email</span>
+      <input type="email" name="email" placeholder="your@email.com" required />
+    </label>
+    <label>
+      <span>💬 Message</span>
+      <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+    </label>
+    <button class="btn primary" type="submit">🚀 Send Message</button>
+  </form>
+</section>
+{% endblock %}

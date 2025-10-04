@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <div class="hero-text reveal">
+    <h1>Hi, I'm <span class="accent">{{ owner.name or 'Your Name' }}</span></h1>
+    <p class="subtitle">{{ owner.role or 'Flutter Developer · Backend (Flask/Python)' }}</p>
+    <div class="cta">
+      <a class="btn primary" href="{{ url_for('projects') }}">🚀 View Projects</a>
+      <a class="btn ghost" href="{{ url_for('about') }}">👋 About Me</a>
+    </div>
+  </div>
+  <div class="hero-cards">
+    <div class="card glass reveal">
+      <h3>📱 Flutter</h3>
+      <p>Beautiful, fast mobile apps with Flutter & Dart. Animations, state mgmt, CI/CD.</p>
+    </div>
+    <div class="card glass reveal">
+      <h3>⚙️ Backend (Flask)</h3>
+      <p>Secure APIs, auth, caching, database integrations, and clean architecture.</p>
+    </div>
+    <div class="card glass reveal">
+      <h3>☁️ Cloud & DevOps</h3>
+      <p>Docker, CI/CD, Firebase, and deployments with observability.</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects-preview">
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="grid">
+    {% for p in projects %}
+      <a class="project-card reveal" href="{{ p.link }}" target="_blank" rel="noopener">
+        <div class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description }}</p>
+      </a>
+    {% else %}
+      <p class="muted">Add your projects to <code>data/projects.json</code> to see them here.</p>
+    {% endfor %}
+  </div>
+  <div class="center mt-lg"><a class="btn" href="{{ url_for('projects') }}">📂 See all projects</a></div>
+</section>
+{% endblock %}

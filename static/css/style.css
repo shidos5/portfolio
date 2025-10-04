@@ -1,0 +1,98 @@
+:root{
+  --bg: #0b1021;
+  --fg: #e7f2ff;
+  --muted: #9bb3c9;
+  --primary: #0ea5e9; /* cyan-500 */
+  --accent: #02569B; /* Flutter blue */
+  --card: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.12);
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--fg); background: radial-gradient(1200px 600px at 10% -10%, rgba(2,86,155,0.35), transparent),
+                      radial-gradient(800px 400px at 90% 10%, rgba(14,165,233,0.25), transparent),
+                      linear-gradient(180deg, #0b1021, #0b1228 40%, #0b1021);
+  overflow-x:hidden;
+}
+
+.nav{position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; padding:16px 32px; backdrop-filter:saturate(140%) blur(10px); background:rgba(11,16,33,0.55); border-bottom:1px solid var(--border)}
+.brand{display:flex; align-items:center; gap:10px; color:var(--fg); text-decoration:none; font-weight:800; font-size:18px}
+.brand .logo{display:inline-grid; place-items:center; width:32px; height:32px; border-radius:8px; background: linear-gradient(135deg, var(--accent), var(--primary)); box-shadow:var(--shadow)}
+.nav nav{display:flex; gap:20px; align-items:center}
+.nav nav a:not(.btn){color:var(--fg); text-decoration:none; opacity:0.85; font-weight:500; transition:opacity .2s ease}
+.nav nav a:not(.btn):hover{opacity:1}
+.nav .btn{padding:8px 20px; font-weight:600}
+
+main{padding:48px 20px; max-width:1100px; margin:0 auto}
+.footer{padding:28px 20px; color:var(--muted); border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between}
+.footer .links{display:flex; gap:16px}
+.footer a{color:var(--muted); text-decoration:none}
+.footer a:hover{color:var(--fg)}
+
+.btn{display:inline-block; padding:10px 16px; border-radius:10px; background:transparent; border:1px solid var(--border); color:var(--fg); text-decoration:none; transition:all .2s ease; box-shadow:none}
+.btn:hover{transform:translateY(-1px); box-shadow:var(--shadow)}
+.btn.primary{background: linear-gradient(135deg, var(--accent), var(--primary)); border-color:transparent}
+.btn.ghost{background:transparent}
+
+.section-title{font-size:32px; font-weight:700; margin:60px 0 32px; text-align:left}
+.projects-preview .section-title{margin-top:80px}
+.muted{color:var(--muted)}
+.center{text-align:center}
+.mt-lg{margin-top:28px}
+
+.card{border:1px solid var(--border); border-radius:16px; padding:18px; background:var(--card); box-shadow:var(--shadow)}
+.glass{backdrop-filter: blur(8px) saturate(140%); background:var(--glass)}
+
+.hero{display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center; margin-bottom:40px}
+.hero h1{font-size:48px; margin:8px 0 16px; line-height:1.2}
+.hero .subtitle{color:var(--muted); font-size:20px; margin-bottom:24px}
+.hero .cta{display:flex; gap:12px; margin-top:32px}
+.hero-cards{display:grid; gap:16px}
+.hero-cards .card{min-height:120px}
+.accent{background:linear-gradient(135deg,var(--primary),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent}
+
+.grid{display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:16px}
+.project-card{border:1px solid var(--border); padding:16px; border-radius:14px; text-decoration:none; color:var(--fg); background:rgba(255,255,255,0.04); transition:transform .2s ease, box-shadow .2s ease; position:relative; overflow:hidden}
+.project-card:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
+.project-card .tags{position:absolute; top:12px; right:12px; display:flex; gap:6px; flex-wrap:wrap}
+.project-card .tags span{font-size:12px; padding:4px 8px; border-radius:999px; background:rgba(14,165,233,0.15); border:1px solid rgba(14,165,233,0.35)}
+
+.about-grid{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+.chips{display:flex; gap:8px; flex-wrap:wrap}
+.chips span{padding:6px 10px; border-radius:999px; background:rgba(2,86,155,0.15); border:1px solid rgba(2,86,155,0.35)}
+
+.form{display:grid; gap:16px; max-width:600px; margin:0 auto}
+.form label{display:grid; gap:8px}
+.form label span{font-weight:600; font-size:14px}
+.form input,.form textarea{padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:rgba(0,0,0,0.2); color:var(--fg); font-family:inherit; font-size:15px; transition:border-color .2s ease}
+.form input:focus,.form textarea:focus{outline:none; border-color:var(--primary)}
+.form button{margin-top:8px; cursor:pointer; font-size:16px}
+
+.flash-area{position:fixed; top:76px; right:20px; z-index:30; display:grid; gap:10px}
+.flash{padding:10px 14px; border-radius:12px; background:rgba(255,255,255,0.08); border:1px solid var(--border)}
+.flash.success{border-color:rgba(34,197,94,0.5)}
+.flash.error{border-color:rgba(239,68,68,0.5)}
+
+/* Reveal on scroll */
+.reveal{opacity:0; transform: translateY(12px); animation: none}
+.reveal.visible{opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease}
+
+/* Canvas background floating particles */
+#bg-canvas{position:fixed; inset:0; z-index:-1}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns: 1fr}
+  .nav{padding:12px 20px}
+  .nav nav{gap:12px}
+  .nav .btn{padding:6px 14px; font-size:14px}
+  .section-title{font-size:26px; margin:40px 0 24px}
+  .hero h1{font-size:36px}
+  .hero .subtitle{font-size:18px}
+  .hero .cta{flex-direction:column}
+  .hero .cta .btn{width:100%; text-align:center}
+  .about-grid{grid-template-columns: 1fr}
+}
