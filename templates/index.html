@@ -5,22 +5,22 @@
     <h1>Hi, I'm <span class="accent">{{ owner.name or 'Your Name' }}</span></h1>
     <p class="subtitle">{{ owner.role or 'Flutter Developer · Backend (Flask/Python)' }}</p>
     <div class="cta">
-      <a class="btn primary" href="{{ url_for('projects') }}">🚀 View Projects</a>
-      <a class="btn ghost" href="{{ url_for('about') }}">👋 About Me</a>
+      <a class="btn primary" href="{{ url_for('projects') }}"><i class="fas fa-rocket"></i> View Projects</a>
+      <a class="btn ghost" href="{{ url_for('about') }}"><i class="fas fa-user-circle"></i> About Me</a>
     </div>
   </div>
   <div class="hero-cards">
     <div class="card glass reveal">
-      <h3>📱 Flutter</h3>
-      <p>Beautiful, fast mobile apps with Flutter & Dart. Animations, state mgmt, CI/CD.</p>
+      <h3><i class="fas fa-mobile-alt" style="color:#3b82f6; margin-right:8px"></i>Flutter Development</h3>
+      <p>Beautiful, fast mobile apps with Flutter & Dart. Animations, state management, and CI/CD.</p>
     </div>
     <div class="card glass reveal">
-      <h3>⚙️ Backend (Flask)</h3>
-      <p>Secure APIs, auth, caching, database integrations, and clean architecture.</p>
+      <h3><i class="fas fa-server" style="color:#0ea5e9; margin-right:8px"></i>Backend (Flask)</h3>
+      <p>Secure APIs, authentication, caching, database integrations, and clean architecture.</p>
     </div>
     <div class="card glass reveal">
-      <h3>☁️ Cloud & DevOps</h3>
-      <p>Docker, CI/CD, Firebase, and deployments with observability.</p>
+      <h3><i class="fas fa-cloud" style="color:#06b6d4; margin-right:8px"></i>Cloud & DevOps</h3>
+      <p>Docker, CI/CD pipelines, Firebase, and scalable deployments with monitoring.</p>
     </div>
   </div>
 </section>
@@ -38,6 +38,6 @@
       <p class="muted">Add your projects to <code>data/projects.json</code> to see them here.</p>
     {% endfor %}
   </div>
-  <div class="center mt-lg"><a class="btn" href="{{ url_for('projects') }}">📂 See all projects</a></div>
+  <div class="center mt-lg"><a class="btn" href="{{ url_for('projects') }}"><i class="fas fa-arrow-right"></i> See All Projects</a></div>
 </section>
 {% endblock %}

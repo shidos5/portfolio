@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 <section class="contact">
-  <h1 class="section-title">✉️ Contact Me</h1>
+  <h1 class="section-title"><i class="fas fa-paper-plane" style="margin-right:12px"></i>Contact Me</h1>
   <form class="form card glass" method="post" action="{{ url_for('contact') }}">
     <label>
-      <span>👤 Name</span>
+      <span><i class="fas fa-user" style="margin-right:6px; color:#3b82f6"></i>Name</span>
       <input type="text" name="name" placeholder="Your name" required />
     </label>
     <label>
-      <span>📧 Email</span>
+      <span><i class="fas fa-envelope" style="margin-right:6px; color:#0ea5e9"></i>Email</span>
       <input type="email" name="email" placeholder="your@email.com" required />
     </label>
     <label>
-      <span>💬 Message</span>
+      <span><i class="fas fa-comment-dots" style="margin-right:6px; color:#06b6d4"></i>Message</span>
       <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
     </label>
-    <button class="btn primary" type="submit">🚀 Send Message</button>
+    <button class="btn primary" type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
   </form>
 </section>
 {% endblock %}

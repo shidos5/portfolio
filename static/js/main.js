@@ -34,13 +34,13 @@
   }
   
   function init(){
-    dots = Array.from({length: 80}, ()=>({
+    dots = Array.from({length: 50}, ()=>({
       x: Math.random()*w,
       y: Math.random()*h,
-      r: 1.5 + Math.random()*2,
-      vx: -0.5 + Math.random(),
-      vy: -0.5 + Math.random(),
-      hue: 210 + Math.random()*60
+      r: 1 + Math.random()*1.5,
+      vx: -0.3 + Math.random()*0.6,
+      vy: -0.3 + Math.random()*0.6,
+      hue: 210 + Math.random()*40
     }));
   }
   
@@ -53,10 +53,10 @@
         const dx = p1.x - p2.x;
         const dy = p1.y - p2.y;
         const dist = Math.sqrt(dx*dx + dy*dy);
-        if(dist < 150){
+        if(dist < 120){
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(59,130,246,${(1-dist/150)*0.15})`;
-          ctx.lineWidth = 1;
+          ctx.strokeStyle = `rgba(59,130,246,${(1-dist/120)*0.08})`;
+          ctx.lineWidth = 0.5;
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
@@ -83,8 +83,8 @@
       
       ctx.beginPath();
       const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r*2);
-      gradient.addColorStop(0, `hsla(${p.hue}, 80%, 60%, 0.8)`);
-      gradient.addColorStop(1, `hsla(${p.hue}, 80%, 60%, 0)`);
+      gradient.addColorStop(0, `hsla(${p.hue}, 70%, 60%, 0.4)`);
+      gradient.addColorStop(1, `hsla(${p.hue}, 70%, 60%, 0)`);
       ctx.fillStyle = gradient;
       ctx.arc(p.x, p.y, p.r*2, 0, Math.PI*2);
       ctx.fill();
